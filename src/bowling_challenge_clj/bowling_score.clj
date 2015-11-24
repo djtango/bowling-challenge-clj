@@ -11,12 +11,12 @@
        10)))
 
 (defn next-2-rolls [rolls]
-    (list (first rolls)
-          (first (rest rolls))))
+  (list (first rolls)
+    (first (rest rolls))))
 
 (defn strike-score [scorecard]
-    (+ (first (first scorecard))
-       (reduce + (next-2-rolls (rest (flatten scorecard))))))
+  (+ (first (first scorecard))
+    (reduce + (next-2-rolls (rest (flatten scorecard))))))
 
 (defn next-roll [scorecard]
   (first (first scorecard)))
