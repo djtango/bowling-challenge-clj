@@ -11,13 +11,14 @@
        10)))
 
 (defn next-2-rolls [rolls]
-  (cond
-    (empty? rolls)
-      '(0)
-    (= (count rolls) 1)
-      (let [first-bonus (first rolls)]
-      (list (first rolls))
-    :else (cons first-bonus (first (rest rolls))))))
+  (let [first-roll (first rolls)
+        second-roll (first (rest rolls))]
+    (cond
+      (empty? rolls)
+        '(0)
+      (= (count rolls) 1)
+        (list first-roll)
+      :else (list first-roll second-roll))))
 
 (defn strike-score [scorecard]
   (+ (first (first scorecard))
